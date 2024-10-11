@@ -1,6 +1,6 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+/*Sexo Todos los dias*/
 public class Main {
     public static void main(String[] args) {
 
