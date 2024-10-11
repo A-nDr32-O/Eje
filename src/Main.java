@@ -1,35 +1,19 @@
 import java.util.InputMismatchException;
-Otra
 import java.util.Scanner;
-Otra
-=======
-//Sexooo
 
-import java.util.Scanner; and
-/*Sexo Todos los dias*/
-
-//Brayan Smith Matabanchoy
-main
-
-main
-main
 public class Main {
     public static void main(String[] args) {
-
         Scanner teclado = new Scanner(System.in);
-        teclado.useDelimiter("\n");
         boolean salir = false;
         int opcion;
 
-        agenda agendaTelefonica = new agenda(  5);
+        Agenda agendaTelefonica = new Agenda(3);
         String nombre;
         int telefono;
 
-        contacto c;
-
-        while (!salir){
+        while (!salir) {
             System.out.println("1. Añadir contacto");
-            System.out.println("2. Listar contacto");
+            System.out.println("2. Listar contactos");
             System.out.println("3. Buscar contacto");
             System.out.println("4. Existe contacto");
             System.out.println("5. Eliminar contacto");
@@ -37,83 +21,75 @@ public class Main {
             System.out.println("7. Agenda llena");
             System.out.println("8. Salir");
             try {
-                System.out.println("Escribe una de las opciones");
+                System.out.print("Escribe una de las opciones: ");
                 opcion = teclado.nextInt();
+                teclado.nextLine();
 
-                switch (opcion){
+                switch (opcion) {
                     case 1:
-                        System.out.println("Escribe un nombre");
-                        nombre = teclado.next();
-
-                        System.out.println("Escribe un telefono");
+                        System.out.print("Escribe un nombre: ");
+                        nombre = teclado.nextLine();
+                        System.out.print("Escribe un teléfono: ");
                         telefono = teclado.nextInt();
 
-                        c = new contacto(nombre, telefono);
-
-                        agendaTelefonica.aniadirContacto(c);
-                    break;
+                        Contacto c = new Contacto(nombre, telefono);
+                        agendaTelefonica.anadirContacto(c);
+                        break;
 
                     case 2:
                         agendaTelefonica.listarContactos();
-                    break;
+                        break;
 
                     case 3:
-                        System.out.println("Escribre un nombre");
-                        nombre = teclado.next();
-
+                        System.out.print("Escribe un nombre: ");
+                        nombre = teclado.nextLine();
                         agendaTelefonica.buscarPorNombre(nombre);
-                    break;
+                        break;
+
                     case 4:
+                        System.out.print("Escribe un nombre: ");
+                        nombre = teclado.nextLine();
+                        Contacto cExistente = new Contacto(nombre, 0);
 
-                        System.out.println("Escribe un nombre");
-                        nombre = teclado.next();
-
-                        c = new contacto(nombre, 0);
-
-                        if (agendaTelefonica.existeContacto(c)) {
+                        if (agendaTelefonica.existeContacto(cExistente)) {
                             System.out.println("Existe contacto");
                         } else {
                             System.out.println("No existe contacto");
                         }
+                        break;
 
-                    break;
                     case 5:
+                        System.out.print("Escribe un nombre: ");
+                        nombre = teclado.nextLine();
+                        Contacto cEliminar = new Contacto(nombre, 0);
+                        agendaTelefonica.eliminarContacto(cEliminar);
+                        break;
 
-                        System.out.println("Escribe un nombre");
-                        nombre = teclado.next();
-
-                        c = new contacto(nombre, 0);
-
-                        agendaTelefonica.eliminarContacto(c);
-
-                    break;
                     case 6:
+                        System.out.println("Hay " + agendaTelefonica.huecosLibre() + " contactos libres");
+                        break;
 
-                        System.out.println("Hay " + agendaTelefonica.huecosLibre() + " contactos libre");
-
-                    break;
                     case 7:
-
-                        //como devuelve un booleano, lo meto en un if
                         if (agendaTelefonica.agendaLlena()) {
-                            System.out.println("La agenda esta llena");
+                            System.out.println("La agenda está llena");
                         } else {
-                            System.out.println("Aun puedes meter contactoss");
+                            System.out.println("Aún puedes meter contactos");
                         }
+                        break;
 
-                    break;
                     case 8:
                         salir = true;
-                    break;
-                    default:
-                        System.out.println("Solo numeros entre 1 y 8");
+                        break;
 
+                    default:
+                        System.out.println("Solo números entre 1 y 8");
                 }
-            }catch (InputMismatchException e){
-                System.out.println("Debes insertar un numero");
+            } catch (InputMismatchException e) {
+                System.out.println("Debes insertar un número");
                 teclado.next();
             }
         }
 
+        teclado.close();
     }
 }
