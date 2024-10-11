@@ -1,6 +1,5 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
-//Sexooo
 public class Main {
     public static void main(String[] args) {
 
@@ -9,11 +8,11 @@ public class Main {
         boolean salir = false;
         int opcion;
 
-        Agenda agendaTelefonica= new Agencia(3);
+        agenda agendaTelefonica = new agenda(  5);
         String nombre;
         int telefono;
 
-        Contacto c;
+        contacto c;
 
         while (!salir){
             System.out.println("1. Añadir contacto");
@@ -36,7 +35,7 @@ public class Main {
                         System.out.println("Escribe un telefono");
                         telefono = teclado.nextInt();
 
-                        c = new Contacto(nombre, telefono);
+                        c = new contacto(nombre, telefono);
 
                         agendaTelefonica.aniadirContacto(c);
                     break;
@@ -54,9 +53,9 @@ public class Main {
                     case 4:
 
                         System.out.println("Escribe un nombre");
-                        nombre = sn.next();
+                        nombre = teclado.next();
 
-                        c = new Contacto(nombre, 0);
+                        c = new contacto(nombre, 0);
 
                         if (agendaTelefonica.existeContacto(c)) {
                             System.out.println("Existe contacto");
@@ -68,9 +67,9 @@ public class Main {
                     case 5:
 
                         System.out.println("Escribe un nombre");
-                        nombre = sn.next();
+                        nombre = teclado.next();
 
-                        c = new Contacto(nombre, 0);
+                        c = new contacto(nombre, 0);
 
                         agendaTelefonica.eliminarContacto(c);
 
