@@ -1,15 +1,16 @@
 public class agenda {
-    private Contacto[] contactos;
 
-    public Agenda() {
-        this.contactos = new Contacto[10];
+    private contacto[] contactos;
+
+    public agenda() {
+        this.contactos = new contacto[10];
     }
 
-    public Agenda(int tamanio){
-        this.contactos = new Contacto[tamanio];
+    public agenda(int tamanio){
+        this.contactos = new contacto[tamanio];
     }
 
-    public void aniadirContacto(Contacto c) {
+    public void aniadirContacto(contacto c) {
 
         if (existeContacto(c)) {
             System.out.println("El contacto con ese nombre ya existe");
@@ -33,7 +34,7 @@ public class agenda {
         }
     }
 
-    public boolean existeContacto(Contacto c) {
+    public boolean existeContacto(contacto c) {
 
         for (int i = 0; i < contactos.length; i++) {
             if (contactos[i] != null && c.equals(contactos[i])) {
@@ -86,7 +87,7 @@ public class agenda {
 
     }
 
-    public void eliminarContacto(Contacto c) {
+    public void eliminarContacto(contacto c) {
 
         boolean encontrado = false;
         for (int i = 0; i < contactos.length && !encontrado; i++) {

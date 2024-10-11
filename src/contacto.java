@@ -26,12 +26,17 @@ public class contacto {
         this.telefono = telefono;
     }
 
-    public boolean equals(Contacto c) {
+    public boolean equals(contacto c) {
         if (this.trim().equalsIgnoreCase(c.getNombre().trim())){
             return true;
         }
         return false;
     }
+
+    private String trim() {
+        return null;
+    }
+
 
     @Override
     public String toString() {
