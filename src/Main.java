@@ -1,6 +1,9 @@
 import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.Scanner; and
 /*Sexo Todos los dias*/
+=======
+//Brayan Smith Matabanchoy
+main
 public class Main {
     public static void main(String[] args) {
 
