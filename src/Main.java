@@ -22,6 +22,7 @@ public class Main {
             System.out.println("8. Salir");
             try {
                 System.out.print("Escribe una de las opciones: ");
+                System.out.print("Escribe una de las opciones");
                 opcion = teclado.nextInt();
                 teclado.nextLine();
 
