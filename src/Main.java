@@ -1,6 +1,9 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+//Brayan Smith Matabanchoy Zambrano
+//Andres Felipe Ortega Cardenas
+
 public class Main {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
