@@ -1,18 +1,6 @@
 import java.util.InputMismatchException;
-Otra
 import java.util.Scanner;
-Otra
-=======
-//Sexooo
 
-import java.util.Scanner; and
-/*Sexo Todos los dias*/
-
-//Brayan Smith Matabanchoy
-main
-
-main
-main
 public class Main {
     public static void main(String[] args) {
 
@@ -37,7 +25,7 @@ public class Main {
             System.out.println("7. Agenda llena");
             System.out.println("8. Salir");
             try {
-                System.out.println("Escribe una de las opciones");
+                System.out.print("Escribe una de las opciones");
                 opcion = teclado.nextInt();
 
                 switch (opcion){
